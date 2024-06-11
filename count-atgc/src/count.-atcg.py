@@ -61,14 +61,18 @@ try:
         # Leer la secuencia de ADN del archivo
         secuencia = file.read().strip().upper()
 
-        # Contar los nucleótidos en la secuencia
-        for nucleotido in secuencia:
-            if nucleotido in conteos:
-                conteos[nucleotido] += 1
+        # Verificar si el archivo está vacío
+        if not secuencia:
+            print("Sorry, the file is empty.")
+        else:
+            # Contar los nucleótidos en la secuencia
+            for nucleotido in secuencia:
+                if nucleotido in conteos:
+                    conteos[nucleotido] += 1
 
-    # Mostrar los resultados
-    print("Conteo de nucleótidos:")
-    for nucleotido, conteo in conteos.items():
-        print(f"{nucleotido}: {conteo}")
+            # Mostrar los resultados
+            print("Conteo de nucleótidos:")
+            for nucleotido, conteo in conteos.items():
+                print(f"{nucleotido}: {conteo}")
 except FileNotFoundError:
     print("Sorry, couldn't find the file.")
