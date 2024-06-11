@@ -65,12 +65,18 @@ try:
         if not secuencia:
             print("Sorry, the file is empty.")
         else:
-            # Contar los nucleótidos en la secuencia
+             # Verificar si la secuencia contiene caracteres inválidos
             for nucleotido in secuencia:
-                if nucleotido in conteos:
-                    conteos[nucleotido] += 1
+                if nucleotido not in nucleotidos_a_contar:
+                    print(f"Sequence contains [{nucleotido}], it is an invalid character.")
+                    break
+            else:      
+            # Contar los nucleótidos en la secuencia
+                for nucleotido in secuencia:
+                    if nucleotido in conteos:
+                        conteos[nucleotido] += 1
 
-            # Mostrar los resultados
+             # Mostrar los resultados
             print("Conteo de nucleótidos:")
             for nucleotido, conteo in conteos.items():
                 print(f"{nucleotido}: {conteo}")
