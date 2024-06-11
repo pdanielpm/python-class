@@ -1,34 +1,63 @@
 # Casos de prueba o escenarios
 
+### Caso de prueba 1: Conteo de todos los nucleotidos en el archivo, no se especifican los nucleotidos.
+Comando:
+python count_atgc.py archivo.txt
 
-### Caso de prueba 1: Se ingresa un archivo vacio 
 Resultado esperado:
+
+Conteo de nucleótidos:
+A: 2
+T: 2
+C: 2
+G: 2
+
+### Caso de prueba 2: Conteo de nucleotidos especificos
+Comando:
+
+python count_atgc.py test1.txt --nucleotidos AC
+Resultado esperado:
+Conteo de nucleótidos:
+A: 2
+C: 2
+
+
+### Caso de prueba 3: Archivo inexistente 
+Comando:
+python count_atgc.py archivo.txt
+
+Resultado esperado:
+Error: El archivo 'archivo.txt' no se encontró.
+
+### Caso 4: Conteo de nucleótidos en un archivo con caracteres no válidos 
+Comando:
+python count_atgc.py archivo.txt
+
+Resultado esperado:
+Conteo de nucleótidos:
 A: 0
 T: 0
 C: 0
 G: 0
 
-### Caso de prueba 2: Se ingresa un archivo con un solo nucleotido
-Contenido del archivo: AAAAA
-Resultado esperado:
-A: 5 
-T: 0
-C: 0
-G: 0
+### Caso 5: Conteo de todos los nucleótidos en un archivo con letras minúsculas o mayusculas
+Comando:
 
-### Caso de prueba 3: Se ingresa un archivo con un numero igual de nucleotidos
-Contenido del archivo: ATCG
-A: 1
-T: 1
-C: 1
-G: 1
+python count_atgc.py archivo.txt
 
-### Caso de prueba 4: Se ingresa un archivo con un numero de nucleotidos diferente
-Contenido del archivo: ATCGATCGATCG
-Resultado esperado:
+Conteo de nucleótidos:
 A: 3
 T: 3
 C: 3
-G: 3
+G: 1
+
+## Caso 6: Conteo de nucleótidos específicos (A y T) en un archivo con letras minúsculas o mayusculas
+Comando:
+python count_atgc.py  archivo.txt --nucleotidos AT
+
+Resultado esperado:
+Conteo de nucleótidos:
+A: 3
+T: 3
 
         

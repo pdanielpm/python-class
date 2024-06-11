@@ -9,7 +9,7 @@ AUTHOR
 Pedro Daniel Pineda Martinez (pedropm@lcg.unam.mx)    
 
 DESCRIPTION
-Este programa cuenta el numero de  cada nucleótido (A,T,C,G) en un archivo dado por el usuario que contiene una secuencia de ADN  
+Este programa cuenta el numero de  cada nucleótido (A,T,C,G) en un archivo dado por el usuario que contiene una secuencia de ADN
 
 CATEGORY
 Programa que cuenta el numero de nucleótidos en una secuencia de ADN
@@ -51,11 +51,6 @@ args = parser.parse_args()
 archivo = args.archivo
 nucleotidos_a_contar = args.nucleotidos.upper()
 
-# Variables para contar los nucleótidos
-cont_A = 0
-cont_T = 0
-cont_C = 0
-cont_G = 0
 
 # Variables para contar los nucleótidos
 conteos = {nucleotido: 0 for nucleotido in nucleotidos_a_contar}
