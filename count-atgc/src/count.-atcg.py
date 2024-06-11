@@ -55,17 +55,20 @@ nucleotidos_a_contar = args.nucleotidos.upper()
 # Variables para contar los nucleótidos
 conteos = {nucleotido: 0 for nucleotido in nucleotidos_a_contar}
 
-# Abrir el archivo en modo lectura
-with open(archivo, 'r') as file:
-    # Leer la secuencia de ADN del archivo
-    secuencia = file.read().strip().upper()
+try:
+    # Abrir el archivo en modo lectura
+    with open(archivo, 'r') as file:
+        # Leer la secuencia de ADN del archivo
+        secuencia = file.read().strip().upper()
 
-    # Contar los nucleótidos en la secuencia
-    for nucleotido in secuencia:
-        if nucleotido in conteos:
-            conteos[nucleotido] += 1
+        # Contar los nucleótidos en la secuencia
+        for nucleotido in secuencia:
+            if nucleotido in conteos:
+                conteos[nucleotido] += 1
 
-# Mostrar los resultados
-print("Conteo de nucleótidos:")
-for nucleotido, conteo in conteos.items():
-    print(f"{nucleotido}: {conteo}")
+    # Mostrar los resultados
+    print("Conteo de nucleótidos:")
+    for nucleotido, conteo in conteos.items():
+        print(f"{nucleotido}: {conteo}")
+except FileNotFoundError:
+    print("Sorry, couldn't find the file.")
