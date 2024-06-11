@@ -16,17 +16,17 @@ Programa que cuenta el numero de nucleótidos en una secuencia de ADN
 
 USAGE
 
-python count_atcg.py archivo.txt
+python count_atcg.py archivo.txt --nucleotidos ATCG
 
-python3 count_atcg.py archivo.txt
+python3 count_atcg.py archivo.txt --nucleotidos ATCG
 
 ARGUMENTS
 
+--nucleotidos: Letras de nucleótidos a contar, por defecto cuenta A, T, C, y G
 
 archivo.txt: Nombre del archivo que contiene la secuencia de ADN de la cual se contaran los nucleótidos
 
 METHOD
-
 
 SEE ALSO
 
@@ -44,16 +44,21 @@ import argparse
 # Configurar el analizador de argumentos
 parser = argparse.ArgumentParser(description='Contar nucleótidos en una secuencia de ADN.')
 parser.add_argument('archivo', type=str, help='Nombre del archivo que contiene la secuencia de ADN')
+parser.add_argument('--nucleotidos', type=str, default='ATCG', help='Letras de nucleótidos a contar, por defecto cuenta A, T, C, y G')
 
 # Parsear los argumentos de la línea de comandos
 args = parser.parse_args()
 archivo = args.archivo
+nucleotidos_a_contar = args.nucleotidos.upper()
 
 # Variables para contar los nucleótidos
 cont_A = 0
 cont_T = 0
 cont_C = 0
 cont_G = 0
+
+# Variables para contar los nucleótidos
+conteos = {nucleotido: 0 for nucleotido in nucleotidos_a_contar}
 
 # Abrir el archivo en modo lectura
 with open(archivo, 'r') as file:
@@ -62,18 +67,10 @@ with open(archivo, 'r') as file:
 
     # Contar los nucleótidos en la secuencia
     for nucleotido in secuencia:
-        if nucleotido == 'A':
-            cont_A += 1
-        elif nucleotido == 'T':
-            cont_T += 1
-        elif nucleotido == 'C':
-            cont_C += 1
-        elif nucleotido == 'G':
-            cont_G += 1
+        if nucleotido in conteos:
+            conteos[nucleotido] += 1
 
 # Mostrar los resultados
 print("Conteo de nucleótidos:")
-print(f"A: {cont_A}")
-print(f"T: {cont_T}")
-print(f"C: {cont_C}")
-print(f"G: {cont_G}")
+for nucleotido, conteo in conteos.items():
+    print(f"{nucleotido}: {conteo}")
