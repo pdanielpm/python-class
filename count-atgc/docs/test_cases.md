@@ -15,7 +15,7 @@ G: 2
 ### Caso de prueba 2: Conteo de nucleotidos especificos
 Comando:
 
-python count_atgc.py test1.txt --nucleotidos AC
+python count_atgc.py archivo.txt --nucleotidos AC
 Resultado esperado:
 Conteo de nucleótidos:
 A: 2
