@@ -9,19 +9,21 @@ AUTHOR
 Pedro Daniel Pineda Martinez (pedropm@lcg.unam.mx)    
 
 DESCRIPTION
-Este programa cuenta el numero de  cada nucleótido (A,T,C,G) en una secuencia dada por un archivo llamado sequence.txt  
+Este programa cuenta el numero de  cada nucleótido (A,T,C,G) en un archivo dado por el usuario que contiene una secuencia de ADN  
 
 CATEGORY
 Programa que cuenta el numero de nucleótidos en una secuencia de ADN
 
 USAGE
 
-python count_atcg.py
+python count_atcg.py archivo.txt
 
-python3 count_atcg.py
+python3 count_atcg.py archivo.txt
 
 ARGUMENTS
 
+
+archivo.txt: Nombre del archivo que contiene la secuencia de ADN de la cual se contaran los nucleótidos
 
 METHOD
 
@@ -30,14 +32,22 @@ SEE ALSO
 
       
 '''
-
+# ===========================================================================
+# =                            imports
+# ===========================================================================
+import argparse
 
 # ===========================================================================
 # =                            main
 # ===========================================================================
 
-# Nombre del archivo que contiene la secuencia de ADN
-archivo = 'sequence.txt'
+# Configurar el analizador de argumentos
+parser = argparse.ArgumentParser(description='Contar nucleótidos en una secuencia de ADN.')
+parser.add_argument('archivo', type=str, help='Nombre del archivo que contiene la secuencia de ADN')
+
+# Parsear los argumentos de la línea de comandos
+args = parser.parse_args()
+archivo = args.archivo
 
 # Variables para contar los nucleótidos
 cont_A = 0

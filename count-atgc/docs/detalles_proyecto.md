@@ -8,7 +8,7 @@
 
 ## Descripción del Problema
 
-Este programa cuenta el numero de  cada nucleótido (A,T,C,G) en una secuencia dada por un archivo llamado sequence.txt
+Este programa cuenta el numero de  cada nucleótido (A,T,C,G) en un archivo dado por el usuario que contiene una secuencia de ADN  
 
 
 ## Especificación de Requisitos
@@ -29,7 +29,7 @@ Requisitos no funcionales
 ## Análisis y Diseño
 
 Para empezar con el conteo de nucleótidos se necesita leer el archivo, se inicializan los contadores A, T, C y G que se utilizaran para contar la cantidad de cada nucleotido en el archivo dado por el usuario.
-Despues se abre el archivo llamado sequence.txt y va recorriendo la cadena de nucleotidos que se encuentra en el archivo, si encuentra cualquiera de las 4 letras se van sumando a las variables.
+Despues se abre el archivo dado por el usuario y va recorriendo la cadena de nucleotidos que se encuentra en el archivo, si encuentra cualquiera de las 4 letras se van sumando a las variables.
 Se imprime la cantidad de cada nucleotido que se encontro en la cadena.
 
 
