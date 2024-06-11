@@ -3,7 +3,7 @@ NAME
 COUNT-ATCG
 
 VERSION
-[1.0]
+[1.3]
 
 AUTHOR
 Pedro Daniel Pineda Martinez (pedropm@lcg.unam.mx)    

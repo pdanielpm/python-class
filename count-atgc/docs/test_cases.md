@@ -27,18 +27,14 @@ Comando:
 python count_atgc.py archivo.txt
 
 Resultado esperado:
-Error: El archivo 'archivo.txt' no se encontró.
+Sorry, couldn't find the file.
 
 ### Caso 4: Conteo de nucleótidos en un archivo con caracteres no válidos 
 Comando:
 python count_atgc.py archivo.txt
 
 Resultado esperado:
-Conteo de nucleótidos:
-A: 0
-T: 0
-C: 0
-G: 0
+"Sequence contains [caracter], it is invalid character".
 
 ### Caso 5: Conteo de todos los nucleótidos en un archivo con letras minúsculas o mayusculas
 Comando:
