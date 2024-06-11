@@ -36,9 +36,11 @@ Se imprime la cantidad de cada nucleotido que se encontro en la cadena.
 
 
 - **Actor**: Usuario
-- **Descripción**: 
-- **Flujo principal**:
+- **Descripción**: El usuario ingresa el archivo que contiene la secuencia de nucleotidos llamado sequence.txt, el programa calcula la aparicion de cada nucleotido e imprime el resultado.
 
+- **Flujo principal**: 
+1. El usuario ingresa el archivo sequence.txt
+2. El programa calcula la aparicion de cada nucleotido e imprime el resultado.
 
-​	
 - **Flujos alternativos**:
+1. Si no se proporciona un archivo, el programa no se ejecuta.
