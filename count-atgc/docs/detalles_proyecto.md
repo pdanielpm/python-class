@@ -28,6 +28,10 @@ Requisitos no funcionales
 
 ## Análisis y Diseño
 
+Para empezar con el conteo de nucleótidos se necesita leer el archivo, se inicializan los contadores A, T, C y G que se utilizaran para contar la cantidad de cada nucleotido en el archivo dado por el usuario.
+Despues se abre el archivo llamado sequence.txt y va recorriendo la cadena de nucleotidos que se encuentra en el archivo, si encuentra cualquiera de las 4 letras se van sumando a las variables.
+Se imprime la cantidad de cada nucleotido que se encontro en la cadena.
+
 
 
 
